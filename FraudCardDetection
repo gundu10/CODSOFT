@@ -1,0 +1,84 @@
+import pandas as pd
+import joblib
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+print("Loading dataset...")
+
+df = pd.read_csv("fraudTrain.csv")
+
+print("Dataset Loaded Successfully!")
+print(df.head())
+
+
+columns_to_drop = [
+    "Unnamed: 0",
+    "trans_date_trans_time",
+    "cc_num",
+    "first",
+    "last",
+    "street",
+    "city",
+    "state",
+    "zip",
+    "dob",
+    "trans_num"
+]
+
+for col in columns_to_drop:
+    if col in df.columns:
+        df.drop(col, axis=1, inplace=True)
+
+
+
+label_encoder = LabelEncoder()
+
+for column in df.columns:
+    if df[column].dtype == "object":
+        df[column] = label_encoder.fit_transform(df[column].astype(str))
+
+
+
+X = df.drop("is_fraud", axis=1)
+y = df["is_fraud"]
+
+
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    random_state=42
+)
+
+
+print("\nTraining Model...")
+
+model = RandomForestClassifier(
+    n_estimators=100,
+    random_state=42
+)
+
+model.fit(X_train, y_train)
+
+print("Model Trained Successfully!")
+
+
+predictions = model.predict(X_test)
+
+
+accuracy = accuracy_score(y_test, predictions)
+
+print("\nAccuracy:", round(accuracy * 100, 2), "%")
+
+print("\nClassification Report:\n")
+print(classification_report(y_test, predictions))
+
+
+joblib.dump(model, "fraud_model.pkl")
+
+print("\nModel Saved Successfully!")
+print("Created file: fraud_model.pkl")
