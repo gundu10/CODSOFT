@@ -1,49 +1,59 @@
-# Movie Genre Classification using Machine Learning
+CodSoft Machine Learning Internship
+Overview
 
-## Project Overview
+This repository contains the machine learning projects completed as part of the CodSoft Machine Learning Internship. The projects demonstrate the application of Machine Learning and Natural Language Processing (NLP) techniques to solve real-world classification problems.
 
-This project develops a machine learning model that predicts the genre of a movie based on its plot summary. It uses Natural Language Processing (NLP) techniques to convert textual data into numerical features and classifies movies into their respective genres.
+Projects
+ 1. Movie Genre Classification
 
-## Features
+Objective:
+Build a machine learning model to predict the genre of a movie based on its plot summary.
 
-* Predicts movie genres from plot descriptions.
-* Performs text preprocessing and feature extraction using TF-IDF.
-* Trains a Logistic Regression classifier.
-* Evaluates model performance using accuracy and classification metrics.
-* Saves the trained model for future predictions.
+Techniques Used:
 
-## Technologies Used
+TF-IDF Vectorization
+Logistic Regression
+Natural Language Processing (NLP)
 
-* Python
-* Pandas
-* Scikit-learn
-* TF-IDF Vectorizer
-* Logistic Regression
-* Joblib
+Features:
 
-## Dataset
+Text preprocessing
+Feature extraction using TF-IDF
+Genre prediction from movie descriptions
+Model evaluation and prediction
+2. Credit Card Fraud Detection
 
-The project uses a movie plot dataset containing plot summaries and their corresponding genres.
+Objective:
+Develop a machine learning model to classify credit card transactions as fraudulent or legitimate.
 
-## Project Structure
+Algorithms Used:
 
-```
-MovieGenreClassification/
-│── train.py
-│── predict.py
-│── requirements.txt
-│── README.md
-│── train_data.txt
-│── genre_model.pkl
-└── tfidf_vectorizer.pkl
-```
+Random Forest Classifier
+Logistic Regression
 
-## How to Run
+Features:
 
-1. Install the required libraries:
+Data preprocessing
+Feature engineering
+Fraud detection
+Model evaluation using classification metrics
+ 3. SMS Spam Detection
 
-2. Train the model
+Objective:
+Build an AI model to classify SMS messages as Spam or Ham (Legitimate).
 
-3. Predict a movie genre
+Techniques Used:
+
+TF-IDF Vectorization
+Multinomial Naive Bayes
+Logistic Regression
+
+Features:
+
+Text preprocessing
+Spam message classification
+Interactive prediction system
+Saved trained model for future predictions
+
 
 
