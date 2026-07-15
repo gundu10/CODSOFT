@@ -1,20 +1,25 @@
-
 import joblib
 
-model = joblib.load("genre_model.pkl")
+model = joblib.load("spam_model.pkl")
 tfidf = joblib.load("tfidf_vectorizer.pkl")
 
-print("Movie Genre Prediction")
-print("-" * 40)
+print("======================================")
+print("      SMS Spam Detection System")
+print("======================================")
 
 while True:
-    description = input("\nEnter Movie Description:\n")
-    description_tfidf = tfidf.transform([description])
-    prediction = model.predict(description_tfidf)
+    message = input("\nEnter an SMS message:\n")
 
-    print("\nPredicted Genre:", prediction[0])
+    message_vector = tfidf.transform([message])
 
-    choice = input("\nPredict another movie? (yes/no): ").lower()
+    prediction = model.predict(message_vector)
+
+    if prediction[0] == 1:
+        print("\nPrediction: SPAM")
+    else:
+        print("\nPrediction: HAM (Legitimate Message)")
+
+    choice = input("\nDo you want to test another message? (yes/no): ").lower()
 
     if choice != "yes":
         print("\nThank you!")
