@@ -21,6 +21,8 @@ Text preprocessing
 Feature extraction using TF-IDF
 Genre prediction from movie descriptions
 Model evaluation and prediction
+
+
 2. Credit Card Fraud Detection
 
 Objective:
@@ -37,7 +39,8 @@ Data preprocessing
 Feature engineering
 Fraud detection
 Model evaluation using classification metrics
- 3. SMS Spam Detection
+
+3. SMS Spam Detection
 
 Objective:
 Build an AI model to classify SMS messages as Spam or Ham (Legitimate).
