@@ -5,6 +5,8 @@ This repository contains the machine learning projects completed as part of the 
 
 Projects
  1. Movie Genre Classification
+    dataset used:
+    Source:https://www.kaggle.com/datasets/hijest/genre-classification-dataset-imdb
 
 Objective:
 Build a machine learning model to predict the genre of a movie based on its plot summary.
@@ -24,6 +26,8 @@ Model evaluation and prediction
 
 
 2. Credit Card Fraud Detection
+   dataset used:
+   Source:https://www.kaggle.com/datasets/kartik2112/fraud-detection
 
 Objective:
 Develop a machine learning model to classify credit card transactions as fraudulent or legitimate.
@@ -41,6 +45,8 @@ Fraud detection
 Model evaluation using classification metrics
 
 3. SMS Spam Detection
+   dataset used :
+   Source:https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset
 
 Objective:
 Build an AI model to classify SMS messages as Spam or Ham (Legitimate).
